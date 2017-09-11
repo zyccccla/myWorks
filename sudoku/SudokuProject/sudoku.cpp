@@ -98,12 +98,14 @@ int main(int argc,char **argv)
 	if(argv[1][0]!='-'||argv[1][1]!='c'||argv[1][2]!='\0')
 	{
 		cout<<"input invalid,please input -c ";
+	
 	 } 
 	 for(int i=0;argv[2][i]!='\0';i++)
 	 {
 	 	if(argv[2][i] < 48 || argv[2][i]>57)
 	 	{
 	 		cout<<"input invalid,please input number";
+	 		break;
 		 }
 		 n=argv[2][i]-'0'+n*10;
 	 }
