@@ -1,7 +1,8 @@
-#include <iostream>  
-#include <deque>   
+#include<iostream>  
+#include<deque>   
 #include<stdio.h>
-#include<fstream>
+//#include<fstream>　
+//#include"generator.h"
 using namespace std;
 const int SIZE=9; 
 int num=0;
@@ -83,9 +84,30 @@ void solve(qpos & Q)
     }         
     Q.push_front(pos_now);  // 都不符合，返回 
 }  
-int main()  
-{   
-	freopen("sudoku.txt", "w" ,stdout);     
+int main(int argc,char **argv)  
+{ 
+
+//	if(argv[1]=="-c") {   
+//	char *array=argv[2];
+//	for(int i=0;array[i]!=0;i++)
+//	{
+//		if(!isdigit(array[i]))
+//		cout<<"input invalid!";
+//	}
+//	generator in;
+	if(argv[1][0]!='-'||argv[1][1]!='c'||argv[1][2]!='\0')
+	{
+		cout<<"input invalid,please input -c ";
+	 } 
+	 for(int i=0;argv[2][i]!='\0';i++)
+	 {
+	 	if(argv[2][i] < 48 || argv[2][i]>57)
+	 	{
+	 		cout<<"input invalid,please input number";
+		 }
+		 n=argv[2][i]-'0'+n*10;
+	 }
+	freopen("sudoku.txt", "w" ,stdout); 
     for (int i = 0; i < 9; i++) {  
         for (int j = 0; j < 9; j++) {  
             if (0 == map[i][j]) {  
@@ -93,13 +115,10 @@ int main()
             }  
         }  
     }  
-    if(!(cin>>n))
-    {
-    	cout<<"输入错误，请输入一个整数！"; 
-	}
     solve(Q);
+//	}
 	fclose(stdout);
-  
+  	
     return 0;  
 }  
 
