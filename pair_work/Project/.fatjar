@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Mon Oct 09 23:41:45 GMT+08:00 2017
+onejar.license.required=false
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=true
+jarname=E\:\\java\\Student-Department\\Student-Department_fat.jar
+manifest.mergeall=true
+manifest.mainclass=Test
+manifest.file=<createnew>
+jarname.isextern=true
+onejar.expand=
+excludes=
+includes=
